@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler's Gamez</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(11, 12, 16, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: rgb(253, 204, 54);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: #c5c6c7;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: rgb(253, 204, 54);
+            background: rgba(253, 204, 54, 0.08);
+        }
+
+        /* Hero / Coming Soon Section */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px 20px;
+        }
+
+        .badge {
+            background: rgba(253, 204, 54, 0.1);
+            border: 1px solid rgb(253, 204, 54);
+            color: rgb(253, 204, 54);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #12131a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 40px 20px 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #8f9296;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: rgb(253, 204, 54);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            color: #5f6368;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 40px; }
+            header { padding: 20px; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="logo">Tyler's Gamez</div>
+        <nav class="nav-links">
+            <a href="#">Our Games</a>
+            <a href="#">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Main Coming Soon Content -->
+    <main>
+        <div class="badge">Under Construction</div>
+        <h1>Something Big Is Cooking</h1>
+        <p>The ultimate hub for Tyler's Gamez is currently being built. Stay locked in.</p>
+    </main>
+
+    <!-- Professional Corporate-Style Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">© Tyler's Gamez</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Designed to look legit. Powered by Vercel.
+        </div>
+    </footer>
+
+</body>
+</html>
