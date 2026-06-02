@@ -5,198 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler's Gamez</title>
     
-    <!-- Updated path to look inside your assets/icons folder -->
+    <!-- Custom tab icon -->
     <link rel="icon" type="image/png" href="assets/icons/TylerGamezIconV2.png">
 
-    <style>
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: #0b0c10;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Header / Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: rgba(11, 12, 16, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-logo-img {
-            width: 35px;
-            height: 35px;
-            border-radius: 6px;
-            object-fit: cover;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: rgb(253, 204, 54);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .nav-links a {
-            color: #c5c6c7;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
-
-        .nav-links a:hover {
-            color: rgb(253, 204, 54);
-            background: rgba(253, 204, 54, 0.08);
-        }
-
-        /* Hero / Coming Soon Section */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 60px 20px;
-        }
-
-        .badge {
-            background: rgba(253, 204, 54, 0.1);
-            border: 1px solid rgb(253, 204, 54);
-            color: rgb(253, 204, 54);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 64px;
-            font-weight: 900;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        p {
-            color: #ffffff;
-            font-size: 20px;
-            max-width: 600px;
-            margin-bottom: 40px;
-            font-weight: 400;
-            opacity: 0.8;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #12131a;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px 40px 20px 40px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-logo {
-            font-weight: 700;
-            font-size: 16px;
-            color: #ffffff;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #8f9296;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: rgb(253, 204, 54);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            color: #5f6368;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-        }
-
-        .creator-link {
-            color: rgb(253, 204, 54);
-            text-decoration: none;
-            font-weight: 600;
-            transition: text-decoration 0.2s;
-        }
-
-        .creator-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 { font-size: 40px; }
-            header { padding: 20px; }
-            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
-            .footer-links { justify-content: center; gap: 15px; }
-        }
-    </style>
+    <!-- Linking your external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <!-- Top Navigation Bar -->
     <header>
         <div class="logo-container">
-            <!-- Updated path to look inside your assets/icons folder -->
             <img src="assets/icons/TylerGamezIconV2.png" alt="Tyler's Gamez Logo" class="nav-logo-img">
             <div class="logo">Tyler's Gamez</div>
         </div>
@@ -213,6 +32,25 @@
         <p>The ultimate hub for Tyler's Gamez is currently being built. Stay locked in.</p>
     </main>
 
+    <!-- SERVER STATUS POPUP MODAL -->
+    <div id="statusModal" class="status-modal">
+        <div class="status-box">
+            <div class="status-header">
+                <h2>System Status</h2>
+                <button class="close-btn" onclick="closeStatus()">&times;</button>
+            </div>
+            <div class="status-list">
+                <a href="https://x.com/Bot1Hello" target="_blank" class="status-item">
+                    <div class="item-info">
+                        <h3>Bot1Hello</h3>
+                        <p>Twitter / X Bot Service</p>
+                    </div>
+                    <div class="status-indicator">Operational</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Professional Corporate-Style Footer -->
     <footer>
         <div class="footer-content">
@@ -221,7 +59,7 @@
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Cookie Settings</a>
-                <a href="#">Server Status</a>
+                <a onclick="openStatus()">Server Status</a>
                 <a href="#">Contact Support</a>
             </div>
         </div>
@@ -229,6 +67,9 @@
             Powered by <a href="https://github.com/TylerGamerYT" target="_blank" class="creator-link">Tyler</a>
         </div>
     </footer>
+
+    <!-- Linking your external JavaScript file -->
+    <script src="js/status.js"></script>
 
 </body>
 </html>
