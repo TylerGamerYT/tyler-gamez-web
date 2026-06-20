@@ -35,9 +35,16 @@
         
         /* Profile Card Layout */
         .founder-card { display: flex; gap: 25px; align-items: center; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 10px; }
-        .founder-pfp { width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgb(253, 204, 54); object-fit: cover; background: #0b0c10; flex-shrink: 0; }
         
-        /* Blank/Anonymous Avatar Placeholder */
+        /* Standard team avatar formatting */
+        .team-pfp { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #0b0c10; flex-shrink: 0; }
+        
+        /* Individual color themes per role */
+        .tyler-border { border: 2px solid rgb(253, 204, 54); }
+        .mil-border { border: 2px solid #2ecc71; }
+        .fish-border { border: 2px solid #3498db; }
+        
+        /* Chloe's Blank Avatar Placeholder */
         .blank-pfp { 
             width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.2); 
             background: #1c1e27; display: flex; align-items: center; justify-content: center;
@@ -47,14 +54,10 @@
             content: '?'; font-size: 36px; font-weight: 700; color: rgba(255, 255, 255, 0.15);
         }
 
-        /* Border frame colors for specific roles */
-        .tester-pfp { border: 2px solid #2ecc71; } /* Game Tester green */
-        .web-pfp { border: 2px solid #3498db; }    /* Web Tester blue */
-
         .founder-info h3 { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
         .founder-title { font-size: 14px; color: rgb(253, 204, 54); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px; }
         
-        /* Accent color details for testers */
+        /* Text accents matching the borders */
         .tester-title { color: #2ecc71; } 
         .web-title { color: #3498db; }
 
@@ -90,7 +93,7 @@
             <div class="founders-container">
                 <!-- Tyler's Card -->
                 <div class="founder-card">
-                    <img src="/assets/icons/Tylerpfp.png" alt="Tyler Lewis" class="founder-pfp">
+                    <img src="/assets/icons/Tylerpfp.png" alt="Tyler Lewis" class="team-pfp tyler-border">
                     <div class="founder-info">
                         <h3>Tyler Lewis</h3>
                         <div class="founder-title">Founder & Lead Developer</div>
@@ -110,7 +113,7 @@
 
                 <!-- Mil's Card -->
                 <div class="founder-card">
-                    <div class="blank-pfp tester-pfp"></div>
+                    <img src="/assets/icons/milpfp.png" alt="Mil" class="team-pfp mil-border">
                     <div class="founder-info">
                         <h3>Mil</h3>
                         <div class="founder-title tester-title">Official Game Tester</div>
@@ -120,7 +123,7 @@
 
                 <!-- Fish's Card -->
                 <div class="founder-card">
-                    <div class="blank-pfp web-pfp"></div>
+                    <img src="/assets/icons/fishpfp.png" alt="Fish" class="team-pfp fish-border">
                     <div class="founder-info">
                         <h3>Fish</h3>
                         <div class="founder-title web-title">Official Website Tester</div>
