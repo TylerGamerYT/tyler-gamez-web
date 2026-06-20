@@ -30,12 +30,29 @@
         
         h2 { font-size: 24px; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; }
         
-        /* Founder Profile Card Layout */
-        .founder-card { display: flex; gap: 25px; align-items: center; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 10px; }
-        .founder-pfp { width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgb(253, 204, 54); object-fit: cover; background: #0b0c10; }
+        /* Team Cards Grid Wrapper */
+        .founders-container { display: flex; flex-direction: column; gap: 20px; }
         
+        /* Profile Card Layout */
+        .founder-card { display: flex; gap: 25px; align-items: center; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 10px; }
+        .founder-pfp { width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgb(253, 204, 54); object-fit: cover; background: #0b0c10; flex-shrink: 0; }
+        
+        /* Blank/Anonymous Avatar Placeholder */
+        .blank-pfp { 
+            width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.2); 
+            background: #1c1e27; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .blank-pfp::before {
+            content: '?'; font-size: 36px; font-weight: 700; color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Tester Badge / Custom Color Border variant */
+        .tester-pfp { border: 2px solid #2ecc71; }
+
         .founder-info h3 { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
         .founder-title { font-size: 14px; color: rgb(253, 204, 54); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .tester-title { color: #2ecc71; } /* Unique green accent for testing badge */
         .founder-bio { font-size: 14.5px; color: #8f9296; line-height: 1.6; }
 
         @media (max-width: 600px) {
@@ -52,6 +69,7 @@
         </a>
         <nav class="nav-links">
             <a href="/games/">Our Games</a>
+            <a href="/about-us/">About Us</a>
         </nav>
     </header>
 
@@ -62,17 +80,40 @@
             
             <hr>
             
-            <h2>Founders</h2>
+            <h2>Our Team</h2>
             
-            <div class="founder-card">
-                <!-- Direct link to your profile icon asset -->
-                <img src="/assets/icons/Tylerpfp.png" alt="Tyler Lewis" class="founder-pfp">
-                <div class="founder-info">
-                    <h3>Tyler Lewis</h3>
-                    <div class="founder-title">Founder & Lead Developer</div>
-                    <p class="founder-bio">Hey, I'm Tyler! I create and manage the experiences here at Tyler's Gamez. I love building unique concepts on Roblox that bring players together across servers to click buttons, discover secrets, and crush global leaderboards.</p>
+            <div class="founders-container">
+                <!-- Tyler's Card -->
+                <div class="founder-card">
+                    <img src="/assets/icons/Tylerpfp.png" alt="Tyler Lewis" class="founder-pfp">
+                    <div class="founder-info">
+                        <h3>Tyler Lewis</h3>
+                        <div class="founder-title">Founder & Lead Developer</div>
+                        <p class="founder-bio">Hey, I'm Tyler! I create and manage the experiences here at Tyler's Gamez. I love building unique concepts on Roblox that bring players together across servers to click buttons, discover secrets, and crush global leaderboards.</p>
+                    </div>
+                </div>
+
+                <!-- Chloe's Card -->
+                <div class="founder-card">
+                    <div class="blank-pfp"></div>
+                    <div class="founder-info">
+                        <h3>Chloe</h3>
+                        <div class="founder-title">Co-Founder</div>
+                        <p class="founder-bio">Chloe helps drive the vision and direction here at Tyler's Gamez. She handles behind the scenes work to keep everything running smoothly. Note: She mostly prefers not to be shown publicly, and we fully respect and allow that privacy!</p>
+                    </div>
+                </div>
+
+                <!-- Mil's Card -->
+                <div class="founder-card">
+                    <div class="blank-pfp tester-pfp"></div>
+                    <div class="founder-info">
+                        <h3>Mil</h3>
+                        <div class="founder-title tester-title">Official Game Tester</div>
+                        <p class="founder-bio">Mil is the gatekeeper of quality control for our Roblox games and experiences. As one of the first ever players of our games and one of our original testers, she meticulously tracks down pesky bugs before updates roll out to the public, ensuring a smooth and fun experience for all players.</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
 
