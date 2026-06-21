@@ -20,16 +20,28 @@
         .nav-links a { color: #c5c6c7; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 16px; }
         .nav-links a:hover { color: rgb(253, 204, 54); }
 
-        main { flex: 1; max-width: 800px; width: 100%; margin: 120px auto 60px auto; padding: 0 20px; }
+        main { flex: 1; max-width: 850px; width: 100%; margin: 120px auto 60px auto; padding: 0 20px; }
         
         .about-section { background: #12131a; border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 12px; }
-        h1 { font-size: 36px; font-weight: 900; margin-bottom: 15px; color: rgb(253, 204, 54); }
-        .mission-text { font-size: 16px; color: #c5c6c7; line-height: 1.6; margin-bottom: 40px; }
+        h1 { font-size: 38px; font-weight: 900; margin-bottom: 15px; color: rgb(253, 204, 54); text-align: center; }
+        .mission-text { font-size: 16px; color: #e1e1e3; line-height: 1.7; margin-bottom: 40px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
         
-        hr { border: 0; height: 1px; background: rgba(255, 255, 255, 0.08); margin-bottom: 40px; }
+        hr { border: 0; height: 1px; background: rgba(255, 255, 255, 0.08); margin: 40px 0; }
         
-        h2 { font-size: 24px; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; }
+        h2 { font-size: 24px; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; color: rgb(253, 204, 54); border-left: 4px solid rgb(253, 204, 54); padding-left: 12px; }
         
+        /* Timeline Styling */
+        .timeline { position: relative; border-left: 2px solid rgba(255, 255, 255, 0.1); padding-left: 30px; margin-left: 15px; margin-bottom: 20px; }
+        .timeline-item { position: relative; margin-bottom: 35px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -41px; top: 5px; width: 14px; height: 14px;
+            border-radius: 50%; background: #12131a; border: 3px solid rgb(253, 204, 54);
+        }
+        .timeline-date { font-size: 13px; font-weight: 700; color: rgb(253, 204, 54); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .timeline-title { font-size: 19px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+        .timeline-desc { font-size: 14.5px; color: #c5c6c7; line-height: 1.6; }
+        .v1-logo-preview { display: block; margin-top: 12px; width: 75px; height: 75px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); }
+
         /* Team Cards Grid Wrapper */
         .founders-container { display: flex; flex-direction: column; gap: 20px; }
         
@@ -41,12 +53,13 @@
         
         /* Individual color themes per role */
         .tyler-border { border: 2px solid rgb(253, 204, 54); }
+        .chloe-border { border: 2px solid #e74c3c; }
         .mil-border { border: 2px solid #2ecc71; }
         .fish-border { border: 2px solid #3498db; }
         
         /* Chloe's Blank Avatar Placeholder */
         .blank-pfp { 
-            width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.2); 
+            width: 100px; height: 100px; border-radius: 50%; 
             background: #1c1e27; display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
         }
@@ -58,6 +71,7 @@
         .founder-title { font-size: 14px; color: rgb(253, 204, 54); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px; }
         
         /* Text accents matching the borders */
+        .chloe-title { color: #e74c3c; }
         .tester-title { color: #2ecc71; } 
         .web-title { color: #3498db; }
 
@@ -65,6 +79,7 @@
 
         @media (max-width: 600px) {
             .founder-card { flex-direction: column; text-align: center; padding: 20px; }
+            .timeline { margin-left: 5px; }
         }
     </style>
 </head>
@@ -84,12 +99,67 @@
     <main>
         <div class="about-section">
             <h1>About Tyler's Gamez</h1>
-            <p class="mission-text">Welcome to the ultimate hub for our Roblox creations! We focus on creating unforgettable experiences from simple, community-driven clickers to mysterious, interactive worlds. Thank you for playing and being part of our rapidly growing gaming community.</p>
+            <p class="mission-text">
+                Our Mission: We are an indie development team dedicated to creating fun, highly experimental, and endlessly playable experiences. From minimalist clickers to mysterious worlds, we turn simple concepts into unforgettable games that bring the community together.
+            </p>
+            
+            <hr>
+            
+            <!-- History / Story Timeline Section -->
+            <h2>Our Story</h2>
+            <div class="timeline">
+                
+                <!-- Timeline 2020 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">August 24, 2020</div>
+                    <div class="timeline-title">Tyler Studios & Early Days</div>
+                    <div class="timeline-desc">
+                        Tyler Studios originally started it all. Tyler paired up with a developer named Icey to build <strong>Fighting Kit Royale</strong> back in the day. After working together closely, Icey eventually departed the team for unknown reasons, which led Tyler to step back from coding and creating games entirely for a long 2 to 3-year hiatus.
+                    </div>
+                </div>
+
+                <!-- Timeline Mid 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">Mid 2025</div>
+                    <div class="timeline-title">Meeting Chloe</div>
+                    <div class="timeline-desc">
+                        After taking a break, Tyler crossed paths with Chloe—another young coder his age who shared the exact same passion for making unique projects. They instantly became development partners, best friends, and a duo of silly teenagers ready to code something awesome together.
+                    </div>
+                </div>
+
+                <!-- Timeline Oct 11 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">October 11, 2025</div>
+                    <div class="timeline-title">Tyler's Gamez Roblox Group Founded</div>
+                    <div class="timeline-desc">
+                        Tyler officially went ahead and registered the group <strong>Tyler's Gamez</strong> on Roblox. They started out using a silly first concept version for the community logo.
+                        <img src="/assets/icons/TylerGamezIconV1.png" alt="Tyler's Gamez V1 Logo" class="v1-logo-preview" title="Our original V1 Logo concept!">
+                    </div>
+                </div>
+
+                <!-- Timeline Oct 20 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">October 20, 2025</div>
+                    <div class="timeline-title">The "Chair." Phenomenon</div>
+                    <div class="timeline-desc">
+                        Just nine days later, Tyler and Chloe created a silly, experimental project titled <strong>Chair.</strong> meant to release as a small project for Halloween. To their absolute surprise, the game went viral overnight—clearing over 1,000 visits in roughly a single week, scaling straight up to 3,000, and rapidly rocketing past 10,000+ total plays!
+                    </div>
+                </div>
+
+                <!-- Timeline 2026 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan - Feb 2026</div>
+                    <div class="timeline-title">"Tree", "Tyler's Games", & "A Button"</div>
+                    <div class="timeline-desc">
+                        Carrying the huge momentum from Chair, Tyler began creating a new game named <strong>Tree</strong> in January 2026 while managing active side updates. Moving forward, he created the group brand <strong>"Tyler's Games"</strong> on February 17, 2026, and rolled out an addictive simulator game named <strong>A Button</strong> on February 26, 2026, focusing on pure, satisfying clicker mechanics!
+                    </div>
+                </div>
+
+            </div>
             
             <hr>
             
             <h2>Our Team</h2>
-            
             <div class="founders-container">
                 <!-- Tyler's Card -->
                 <div class="founder-card">
@@ -103,11 +173,11 @@
 
                 <!-- Chloe's Card -->
                 <div class="founder-card">
-                    <div class="blank-pfp"></div>
+                    <div class="blank-pfp chloe-border"></div>
                     <div class="founder-info">
                         <h3>Chloe</h3>
-                        <div class="founder-title">Co-Founder</div>
-                        <p class="founder-bio">Chloe helps drive the vision and direction here at Tyler's Gamez. She handles behind-the-scenes work to keep everything running smoothly. Note: She mostly prefers not to be shown publicly, and we fully respect and allow that privacy!</p>
+                        <div class="founder-title chloe-title">Co-Founder & Lead Dev Partner</div>
+                        <p class="founder-bio">Chloe helps drive the vision and core script directions here at Tyler's Gamez. As Tyler's development partner and best friend, she helps build out our interactive experiences. Note: She mostly prefers not to be shown publicly, and we fully respect and allow that privacy!</p>
                     </div>
                 </div>
 
