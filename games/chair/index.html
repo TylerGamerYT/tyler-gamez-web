@@ -181,20 +181,17 @@ Be aware... THE CHAIR.</div>
     <!-- Gallery Engine Logic script -->
     <script>
         let currentSlide = 0;
-        const totalSlides = document.getElementsByClassName("slide");
 
         function moveSlide(step) {
-            // Hide active layout element
+            const totalSlides = document.getElementsByClassName("slide");
+            
+            // Hide the currently active slide
             totalSlides[currentSlide].style.display = "none";
             
-            // Adjust index tracker
-            currentSlide += step;
+            // Calculate the next slide index
+            currentSlide = (currentSlide + step + totalSlides.length) % totalSlides.length;
             
-            // Boundaries check loops
-            if (currentSlide >= totalSlides.length) { currentSlide = 0; }
-            if (currentSlide < 0) { currentSlide = totalSlides.length - 1; }
-            
-            // Render target item display layout view
+            // Display the new active slide
             totalSlides[currentSlide].style.display = "block";
         }
     </script>
