@@ -18,6 +18,7 @@
         .nav-logo-img { width: 35px; height: 35px; border-radius: 6px; }
         .logo { font-size: 24px; font-weight: 800; color: rgb(253, 204, 54); }
         .nav-links a { color: #c5c6c7; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 16px; }
+        .nav-links a:hover { color: rgb(253, 204, 54); }
 
         main { flex: 1; max-width: 1200px; width: 100%; margin: 120px auto 60px auto; padding: 0 20px; }
         
@@ -33,6 +34,7 @@
             letter-spacing: 0.5px;
         }
         h2.section-heading.steam-type { border-left-color: #1a9fff; }
+        h2.section-heading.stats-type { border-left-color: #e74c3c; }
         
         /* Grid Setup */
         .games-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start; margin-bottom: 40px; }
@@ -94,10 +96,41 @@
             cursor: not-allowed;
             pointer-events: none; /* Block click logic directly */
         }
+
+        /* Ecosystem & Live Dashboard Row Styling */
+        .dashboard-row { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 20px; }
+        .dashboard-panel { background: #12131a; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 25px; flex: 1; min-width: 320px; }
+        
+        .panel-title { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        
+        /* Live Counter Badges */
+        .counter-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .counter-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); padding: 15px; border-radius: 8px; text-align: center; }
+        .counter-box .num { font-size: 24px; font-weight: 800; color: #e74c3c; display: block; }
+        .counter-box .label { font-size: 12px; color: #8f9296; font-weight: 600; text-transform: uppercase; margin-top: 4px; }
+        
+        /* Bot Spotlight Social List */
+        .bot-socials-list { display: flex; flex-direction: column; gap: 12px; }
+        .bot-social-item { 
+            display: flex; justify-content: space-between; align-items: center; 
+            background: rgba(255, 255, 255, 0.02); padding: 12px 16px; border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .bot-platform-info { font-size: 14.5px; font-weight: 700; color: #ffffff; }
+        .bot-platform-info span { font-size: 12px; color: #8f9296; font-weight: 500; display: block; margin-top: 2px; }
+        
+        .bot-link { 
+            color: rgb(253, 204, 54); text-decoration: none; font-size: 13px; font-weight: 700; 
+            padding: 6px 12px; background: rgba(253, 204, 54, 0.08); border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .bot-link:hover { background: rgb(253, 204, 54); color: #0b0c10; }
+        .bot-link.dev-tag { background: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); cursor: default; }
         
         /* Center grid items gracefully on compressed screens */
         @media (max-width: 768px) {
             .games-grid { justify-content: center; }
+            .dashboard-row { flex-direction: column; }
         }
     </style>
 </head>
@@ -109,7 +142,8 @@
             <div class="logo">Tyler's Gamez</div>
         </a>
         <nav class="nav-links">
-            <a href="#">Our Games</a>
+            <a href="/games/">Our Games</a>
+            <a href="../about-us/">About Us</a>
         </nav>
     </header>
 
@@ -199,6 +233,58 @@ Click food. Get rich. Become unstoppable.</p>
                     <div class="game-author">By <a href="https://www.roblox.com/communities/403943992/Tyler-s-Gamez#!/about" target="_blank">@Tyler's Gamez</a></div>
                     <p class="game-desc">The long-awaited sequel to the ultimate seat simulator. Taking the mystery off the grass fields and directly onto your desktop environment. Stay tuned.</p>
                     <a href="#" class="disabled-btn" onclick="return false;">COMING SOON</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading stats-type">Ecosystem Dashboard</h2>
+        
+        <div class="dashboard-row">
+            <div class="dashboard-panel">
+                <div class="panel-title">Studio Database Metrics</div>
+                <div class="counter-grid">
+                    <div class="counter-box">
+                        <span class="num">5</span>
+                        <span class="label">Active Modules</span>
+                    </div>
+                    <div class="counter-box">
+                        <span class="num">3</span>
+                        <span class="label">Studio Group Brands</span>
+                    </div>
+                    <div class="counter-box">
+                        <span class="num">10K+</span>
+                        <span class="label">Chair Hits</span>
+                    </div>
+                    <div class="counter-box">
+                        <span class="num">Online</span>
+                        <span class="label">System Status</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-panel">
+                <div class="panel-title">Bot1Hello Network Spotlight</div>
+                <div class="bot-socials-list">
+                    <div class="bot-social-item">
+                        <div class="bot-platform-info">X Platform (Twitter) <span>Legacy Host Network</span></div>
+                        <a href="https://x.com" target="_blank" class="bot-link">View Profile</a>
+                    </div>
+                    <div class="bot-social-item">
+                        <div class="bot-platform-info">Telegram System <span>Automated Delivery</span></div>
+                        <a href="https://telegram.org" target="_blank" class="bot-link">Launch Channel</a>
+                    </div>
+                    <div class="bot-social-item">
+                        <div class="bot-platform-info">Bluesky Fediverse <span>Alternative Space</span></div>
+                        <a href="https://bsky.app" target="_blank" class="bot-link">Connect</a>
+                    </div>
+                    <div class="bot-social-item">
+                        <div class="bot-platform-info">Mastodon Network <span>Decentralized Node</span></div>
+                        <a href="https://joinmastodon.org" target="_blank" class="bot-link">Connect</a>
+                    </div>
+                    <div class="bot-social-item">
+                        <div class="bot-platform-info">Multilingual Translation Nodes <span>Internal Localization Build</span></div>
+                        <a href="#" onclick="return false;" class="bot-link dev-tag">In Dev</a>
+                    </div>
                 </div>
             </div>
         </div>
