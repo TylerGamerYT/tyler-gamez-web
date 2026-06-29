@@ -124,8 +124,16 @@
             opacity: 0.8;
         }
 
+        /* Actions Row Layout styling */
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         /* View Repository Dedicated Action Button */
-        .repo-btn {
+        .repo-btn, .newswire-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -140,20 +148,36 @@
             transition: all 0.2s ease;
         }
 
-        .repo-btn:hover {
-            background: rgba(253, 204, 54, 0.05);
-            border-color: rgb(253, 204, 54);
+        /* Premium Highlight Variant styling for the Newswire shortcut */
+        .newswire-btn {
+            background: rgba(253, 204, 54, 0.1);
+            border-color: rgba(253, 204, 54, 0.3);
             color: rgb(253, 204, 54);
+        }
+
+        .repo-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
-        .repo-btn i {
+        .newswire-btn:hover {
+            background: rgba(253, 204, 54, 0.2);
+            border-color: rgb(253, 204, 54);
+            transform: translateY(-2px);
+        }
+
+        .repo-btn i, .newswire-btn i {
             font-size: 18px;
             transition: transform 0.2s ease;
         }
 
         .repo-btn:hover i {
             transform: scale(1.1) rotate(-8deg);
+        }
+        
+        .newswire-btn:hover i {
+            transform: scale(1.1) translateY(-1px);
         }
 
         /* Footer */
@@ -392,6 +416,8 @@
         </a>
         <nav class="nav-links">
             <a href="games/">Our Games</a>
+            <!-- Added Newswire Link inside Navigation -->
+            <a href="newswire/">Newswire</a>
             <a href="/about-us/">About Us</a>
         </nav>
     </header>
@@ -401,10 +427,17 @@
         <h1>Something Big Is Cooking</h1>
         <p>The ultimate hub for Tyler's Gamez is currently being built. Stay locked in.</p>
         
-        <a href="https://github.com/TylerGamerYT/tyler-gamez-web" target="_blank" class="repo-btn">
-            <i class="fa-brands fa-github"></i>
-            View Source Code
-        </a>
+        <!-- Added Layout Action Row Container -->
+        <div class="hero-actions">
+            <a href="newswire/" class="newswire-btn">
+                <i class="fa-solid fa-newspaper"></i>
+                Read Newswire
+            </a>
+            <a href="https://github.com/TylerGamerYT/tyler-gamez-web" target="_blank" class="repo-btn">
+                <i class="fa-brands fa-github"></i>
+                View Source Code
+            </a>
+        </div>
     </main>
 
     <div id="statusModal" class="status-modal">
