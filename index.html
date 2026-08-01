@@ -130,6 +130,7 @@
             gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 60px;
         }
 
         /* View Repository Dedicated Action Button */
@@ -178,6 +179,139 @@
         
         .newswire-btn:hover i {
             transform: scale(1.1) translateY(-1px);
+        }
+
+        /* ROCKSTAR-STYLE FEATURED NEWSWIRE GRID */
+        .rockstar-grid-container {
+            width: 100%;
+            max-width: 1100px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .grid-section-title {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #5f6368;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .grid-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .rockstar-cards-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* Individual Card Styling (Matches Rockstar Website Screenshot) */
+        .rs-card {
+            background: #111319;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #ffffff;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .rs-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(253, 204, 54, 0.4);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+        }
+
+        .rs-card-image-box {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            background: #000000;
+        }
+
+        .rs-card-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .rs-card:hover .rs-card-image-box img {
+            transform: scale(1.05);
+        }
+
+        .rs-card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .rs-card-category {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #8f9296;
+            margin-bottom: 10px;
+        }
+
+        .rs-card.horror-theme .rs-card-category {
+            color: #ff3366;
+        }
+
+        .rs-card-title {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .rs-card-desc {
+            font-size: 14px;
+            color: #a0a5b1;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .rs-card-date {
+            font-size: 13px;
+            color: #5f6368;
+            font-weight: 600;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+            margin-top: auto;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: rgba(255, 51, 102, 0.15);
+            color: #ff3366;
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
         }
 
         /* Footer */
@@ -245,7 +379,6 @@
             width: 18px;
             height: 18px;
             background-color: currentColor;
-            /* SVG mask layer to force the vintage bird shape onto the color variable fill */
             -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z'/%3E%3C/svg%3E") no-repeat center;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z'/%3E%3C/svg%3E") no-repeat center;
         }
@@ -405,6 +538,7 @@
             .footer-content { flex-direction: column; gap: 25px; text-align: center; }
             .footer-socials { justify-content: center; }
             .footer-links { justify-content: center; gap: 15px; }
+            .rockstar-cards-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -436,6 +570,58 @@
                 <i class="fa-brands fa-github"></i>
                 View Source Code
             </a>
+        </div>
+
+        <!-- ROCKSTAR GAMES STYLE FEATURED ANNOUNCEMENTS SECTION -->
+        <div class="rockstar-grid-container">
+            <div class="grid-section-title">
+                <span>Featured Announcements</span>
+            </div>
+
+            <div class="rockstar-cards-row">
+
+                <!-- CHAIR TWO HORROR / LORE TEASER CARD -->
+                <a href="newswire/" class="rs-card horror-theme">
+                    <div class="rs-card-image-box">
+                        <img src="assets/games/chair/chair-banner.jpg" alt="Chair Two Horror Teaser" onerror="this.src='https://images.unsplash.com/photo-1580481072645-022f9a6d1270?q=80&w=1200&auto=format&fit=crop'">
+                    </div>
+                    <div class="rs-card-content">
+                        <div>
+                            <div class="rs-card-category">
+                                Tyler's Gamez // Horror Archive
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                            <h2 class="rs-card-title">Chair Two: The Unspoken Protocol</h2>
+                            <p class="rs-card-desc">
+                                Some seating is never meant to be occupied. Uncover the redacted audio logs, corrupted security feeds, and psychological horror buried within the second seat.
+                            </p>
+                        </div>
+                        <div class="rs-card-date">
+                            Target Release: 2026 / 2027
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SYSTEM VAULT / NEWSWIRE CARD -->
+                <a href="eastereggs/" class="rs-card">
+                    <div class="rs-card-image-box">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="The Secret Vault">
+                    </div>
+                    <div class="rs-card-content">
+                        <div>
+                            <div class="rs-card-category">System Database</div>
+                            <h2 class="rs-card-title">Secret Vault & Terminal Entries</h2>
+                            <p class="rs-card-desc">
+                                Access hidden development portals, CLI hacking simulations, sub-layer matrices, and developer log archives directly from the secret vault.
+                            </p>
+                        </div>
+                        <div class="rs-card-date">
+                            Updated July 2026
+                        </div>
+                    </div>
+                </a>
+
+            </div>
         </div>
     </main>
 
