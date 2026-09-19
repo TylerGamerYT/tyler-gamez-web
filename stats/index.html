@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Statistics - Tyler's Gamez</title>
+    <link rel="icon" type="image/png" href="../assets/icons/TylerGamezIconV2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reusing your site's exact root styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #0b0c10; color: #ffffff; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+        
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 40px; background: rgba(11, 12, 16, 0.8);
+            backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo-img { width: 35px; height: 35px; border-radius: 6px; object-fit: cover; }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; color: rgb(253, 204, 54); }
+        .nav-links { display: flex; gap: 10px; }
+        .nav-links a { color: #c5c6c7; text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 16px; border-radius: 4px; transition: 0.3s; }
+        .nav-links a:hover { color: rgb(253, 204, 54); background: rgba(253, 204, 54, 0.08); }
+
+        main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 140px 20px 80px 20px; max-width: 900px; margin: 0 auto; width: 100%; text-align: center; }
+        .badge { background: rgba(253, 204, 54, 0.1); border: 1px solid rgb(253, 204, 54); color: rgb(253, 204, 54); padding: 6px 16px; border-radius: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700; }
+        h1 { font-size: 48px; font-weight: 900; margin-bottom: 10px; }
+        p.subtitle { color: #8f9296; font-size: 18px; margin-bottom: 40px; }
+
+        .stats-grid { display: grid; grid-template-columns: 1fr; gap: 24px; width: 100%; max-width: 600px; }
+        .stat-card { background: #111319; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 40px; text-align: center; position: relative; overflow: hidden; }
+        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: rgb(253, 204, 54); }
+        .stat-label { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #8f9296; margin-bottom: 15px; }
+        .stat-number { font-size: 64px; font-weight: 900; color: #ffffff; letter-spacing: -1px; }
+        .stat-number i { font-size: 40px; color: rgb(253, 204, 54); margin-right: 10px; vertical-align: middle; }
+
+        footer { background-color: #12131a; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 30px; text-align: center; color: #5f6368; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../" class="logo-container">
+            <img src="../assets/icons/TylerGamezIconV2.png" alt="Logo" class="nav-logo-img">
+            <div class="logo">Tyler's Gamez</div>
+        </a>
+        <nav class="nav-links">
+            <a href="../games/">Our Games</a>
+            <a href="../newswire/">Newswire</a>
+            <a href="./" style="color: rgb(253, 204, 54);">Stats</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="badge">Live Telemetry</div>
+        <h1>Global Network Stats</h1>
+        <p class="subtitle">Real-time database metrics pulled straight from Bot1Hello infrastructure.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Hellos Recorded</div>
+                <div class="stat-number" id="helloCount"><i class="fa-solid fa-spinner fa-spin"></i></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tyler’s Gamez. All rights reserved.</p>
+    </footer>
+
+    <script>
+    async function fetchHelloStats() {
+        const countElement = document.getElementById('helloCount');
+        try {
+            // Fetch the generated stats.json file from your repo
+            const response = await fetch('../stats.json');
+            const data = await response.json();
+            
+            // Insert the total count from stats.json
+            countElement.innerText = data.total.toLocaleString();
+        } catch (error) {
+            console.error('Failed to fetch hello count:', error);
+            countElement.innerText = '0'; // Fallback if file isn't found yet
+        }
+    }
+
+    fetchHelloStats();
+
+        fetchHelloStats();
+        // Refresh every 30 seconds
+        setInterval(fetchHelloStats, 30000);
+    </script>
+</body>
+</html>
