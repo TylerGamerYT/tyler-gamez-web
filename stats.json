@@ -1,12 +1,12 @@
 {
-  "total": 3822,
+  "total": 3830,
   "platforms": {
-    "bluesky": 1338,
-    "discord": 858,
-    "tumblr": 221,
-    "mastodon": 1405,
+    "bluesky": 1340,
+    "discord": 862,
+    "tumblr": 222,
+    "mastodon": 1406,
     "telegram": 0,
     "reddit": 0
   },
-  "updatedAt": "2026-10-02T03:14:48.644Z"
+  "updatedAt": "2026-10-02T11:37:09.477Z"
 }
